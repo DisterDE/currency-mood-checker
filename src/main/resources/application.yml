@@ -1,0 +1,10 @@
+giphy:
+  api:
+    key: 4NvIYvT9QhZAfHBly7ejpB0ca23GweAC
+    topics:
+      - 'rich'
+      - 'poor'
+rates:
+  currency: EUR
+  base: USD
+  key: 36d61255da71498d86a71cd7ffbeb3ab
