@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestParam
 
-@FeignClient(name = "rates-client", url = "openexchangerates.org/api")
+@FeignClient(name = "rates-client", url = "\${rates.url}")
 interface RatesClient {
 
     @GetMapping("/latest.json")

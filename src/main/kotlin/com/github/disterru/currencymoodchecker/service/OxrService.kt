@@ -1,7 +1,7 @@
 package com.github.disterru.currencymoodchecker.service
 
 interface OxrService {
-    fun getCurrentRate(): Double
-    fun getYesterdayRate(): Double
-    fun getOneDayDifference(): Double
+    fun getCurrentRate(currency: String): Double
+    fun getYesterdayRate(currency: String): Double
+    fun getOneDayDifference(currency: String): Double
 }

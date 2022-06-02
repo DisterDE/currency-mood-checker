@@ -1,10 +1,14 @@
 giphy:
   api:
+    url:
+      metadata: api.giphy.com/v1/gifs/search
+      gif: i.giphy.com/media/
     key: 4NvIYvT9QhZAfHBly7ejpB0ca23GweAC
     topics:
-      - 'rich'
-      - 'poor'
+      bad: broke
+      good: rich
 rates:
+  url: openexchangerates.org/api
   currency: EUR
   base: USD
   key: 36d61255da71498d86a71cd7ffbeb3ab

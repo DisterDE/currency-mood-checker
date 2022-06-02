@@ -12,19 +12,20 @@ class OxrServiceImpl(
     private val properties: CurrencyProperties
 ) : OxrService {
 
-    override fun getCurrentRate(): Double =
-        ratesClient.getCurrentRates(properties.key, properties.base)
-            .rates[properties.currency]
+    override fun getCurrentRate(currency: String): Double {
+        return ratesClient.getCurrentRates(properties.key, properties.base)
+            .rates[currency]
             ?: throw CurrencyNotFoundException(properties.currency)
+    }
 
 
-    override fun getYesterdayRate(): Double {
+    override fun getYesterdayRate(currency: String): Double {
         val yesterday = LocalDate.now().minusDays(1)
         return ratesClient.getHistoricalRates(
             properties.key,
             properties.base,
             yesterday.toString()
-        ).rates[properties.currency]
+        ).rates[currency]
             ?: throw CurrencyNotFoundException(properties.currency)
     }
 
@@ -43,7 +44,7 @@ class OxrServiceImpl(
 //        return map[today]!! - map[yesterday]!!
 //    }
 
-    override fun getOneDayDifference(): Double {
-        return getCurrentRate() - getYesterdayRate()
+    override fun getOneDayDifference(currency: String): Double {
+        return getCurrentRate(currency) - getYesterdayRate(currency)
     }
 }

@@ -5,5 +5,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 @ConfigurationProperties(prefix = "giphy.api")
 class GiphyProperties {
     lateinit var key: String
-    lateinit var topics: List<String>
+}
+
+@ConfigurationProperties(prefix = "giphy.api.topics")
+class TopicProperties {
+    lateinit var bad: String
+    lateinit var good: String
 }

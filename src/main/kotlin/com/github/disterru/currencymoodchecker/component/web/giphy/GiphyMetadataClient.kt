@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 
-@FeignClient(value = "giphy-metadata-client", url = "api.giphy.com/v1/gifs/search")
+@FeignClient(value = "giphy-metadata-client", url = "\${giphy.api.url.metadata}")
 interface GiphyMetadataClient {
 
     @GetMapping(produces = ["application/json"])
